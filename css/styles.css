@@ -43,6 +43,26 @@ nav .nav-item:hover {
   font-size: 1.5rem;
 }
 
+/**CUSTOM BUTTONS **/
+.btn {
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  opacity: 1;
+  font-size: larger;
+}
+
+.btn-blue {
+  background-color: #2D3192;
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  color: #ffffff;
+}
+
 /**HEADER**/
 header {
   padding-top: 60px;
@@ -96,26 +116,6 @@ section .soc-med-icons i:hover {
 .card-title {
   font-weight: 700;
   color: #ED1B24;
-}
-
-/**CUSTOM BUTTONS **/
-.btn {
-  opacity: 0.8;
-  transition: all 0.5s ease;
-}
-
-.btn:hover {
-  opacity: 1;
-  font-size: larger;
-}
-
-.btn-blue {
-  background-color: #2D3192;
-  color: #ffffff;
-}
-
-.btn-blue:hover {
-  color: #ffffff;
 }
 
 /**SPONSORS **/

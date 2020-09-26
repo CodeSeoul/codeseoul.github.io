@@ -1,42 +1,7 @@
 /**
- * Smooth Scrolling
- */
-(function($) {
-  "use strict"; // Start of use strict
-
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 100)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
-
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
-
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 56
-  });
-
-})(jQuery); // End of use strict
-
-
-
-/**
  * Meetup API
+ * Returns an array from the API
  */
-
 function getMeetupEvents() {
   $.ajax({
     url: "https://api.meetup.com/CodeSeoul/events",
@@ -53,10 +18,12 @@ function getMeetupEvents() {
 }
 getMeetupEvents();
 
+/**
+ * Function to create new elements for each event
+ * @param {Array} data 
+ */
 function createMeetupEvents(data) {
   let eventsDiv = document.querySelector(`#events-container`);
-
-  console.log(data[0])
 
   for(let i =0; i< data.length; i++){
 
@@ -98,6 +65,38 @@ function createMeetupEvents(data) {
 
     eventsDiv.appendChild(eventCard);
   }
-
-
 }
+
+/**
+ * Smooth Scrolling
+ */
+(function($) {
+  "use strict"; // Start of use strict
+
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 100)
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
+    }
+  });
+
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function() {
+    $('.navbar-collapse').collapse('hide');
+  });
+
+  // Activate scrollspy to add active class to navbar items on scroll
+  $('body').scrollspy({
+    target: '#mainNav',
+    offset: 56
+  });
+
+})(jQuery); // End of use strict
+
