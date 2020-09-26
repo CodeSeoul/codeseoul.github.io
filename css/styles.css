@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/**NAVIGATION**/
+nav {
+  border-bottom: 0.2rem solid #ED1B24;
+  background-color: #ffffff;
+}
+
+nav .container img {
+  width: 14rem;
+}
+
+nav .nav-link {
+  color: #2D3192;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav .nav-item {
+  margin: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+nav .nav-item:hover {
+  border-bottom: 0.2rem solid #2D3192;
+}
+
+.fa-bars {
+  color:#ED1B24;
+  font-size: 1.5rem;
+}
+
+/**HEADER**/
+header {
+  padding-top: 60px;
+}
+
+header img {
+  width: 50%;
+}
+
+section {
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+section h2 {
+  font-weight: bold;
+  color: #2D3192;
+}
+
+section a {
+  color: #ED1B24;
+}
+
+section .soc-med-icons i{
+  font-size: 4rem;
+  transition: all 0.3s ease;
+  padding: 0.3rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+section .soc-med-icons i:hover {
+  color: #2D3192;
+}
+
+section #intro li{
+list-style-type: none;
+}
+
+
+/**SERIES CARDS**/
+.series-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+}
+
+.series-container .card {
+  width: 15rem;
+}
+
+.card-title {
+  font-weight: 700;
+  color: #ED1B24;
+}
+
+/**CUSTOM BUTTONS **/
+.btn {
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  opacity: 1;
+  font-size: larger;
+}
+
+.btn-blue {
+  background-color: #2D3192;
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  color: #ffffff;
+}
+
+/**SPONSORS **/
+.sponsors-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsors-list .sponsor-ind {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  margin: 0.5rem;
+}
+
+.sponsor-ind img {
+  width: 100%;
+}
+
+/** MEDIA QUERIES**/
+@media only screen and (max-width: 700px) {
+  nav .container {
+    text-align: center;
+  }
+
+  nav .logo {
+    display: inline-block;
+    width: 80%;
+  }
+  nav .container img {
+    width: 75%;
+  }
+
+  #navbarResponsive {
+    background-color: #ffffff;
+    text-align: center;
+  }
+
+  header {
+    padding-top: 100px;
+  }
+
+}
