@@ -16,6 +16,7 @@ a:hover {
 nav {
   border-bottom: 0.2rem solid #ED1B24;
   background-color: #ffffff;
+  height: 5rem;
 }
 
 nav .container img {
@@ -51,6 +52,7 @@ header img {
   width: 50%;
 }
 
+/**CONTENT**/
 section {
   padding: 0.5rem;
 }
@@ -58,7 +60,6 @@ section {
 section h2 {
   font-weight: bold;
   color: #2D3192;
-  margin-top: 1rem;
 }
 
 section a {
@@ -80,7 +81,6 @@ section .soc-med-icons i:hover {
 #intro ul{
   list-style-type: none;
 }
-
 
 /**SERIES CARDS**/
 .series-container {
