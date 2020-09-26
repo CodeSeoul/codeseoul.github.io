@@ -53,12 +53,12 @@ header img {
 
 section {
   padding: 0.5rem;
-  margin-top: 1rem;
 }
 
 section h2 {
   font-weight: bold;
   color: #2D3192;
+  margin-top: 1rem;
 }
 
 section a {
@@ -77,8 +77,8 @@ section .soc-med-icons i:hover {
   color: #2D3192;
 }
 
-section #intro li{
-list-style-type: none;
+#intro ul{
+  list-style-type: none;
 }
 
 
