@@ -8,6 +8,7 @@
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179038448-1"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -15,6 +16,8 @@
 
     gtag('config', 'UA-179038448-1');
   </script>
+  <!-- AOS style -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Primary Meta Tags -->
   <title>CodeSeoul - Dedicated to Connecting Technologists</title>
@@ -59,15 +62,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
 
-          <li class="nav-item">
+          <li class="nav-item" data-aos="fade-right">
             <a class="nav-link js-scroll-trigger" href="#events">Events</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" data-aos-delay="300" data-aos="fade-right"
+          >
             <a class="nav-link js-scroll-trigger" href="#series">Series</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" data-aos-delay="600" data-aos="fade-right">
             <a class="nav-link js-scroll-trigger" href="#sponsors">Sponsors</a>
           </li>
 
@@ -83,7 +87,7 @@
   <!-- Header -->
   <header>
     <div class="container text-center">
-      <img src="images/logo-color-square-512(1).jpg"/>
+      <img src="images/logo-color-square-512(1).jpg" data-aos="flip-left"/>
       <p class="lead">A non-profit, international community dedicated to connecting coders of all levels and backgrounds to learn, teach
          and build things, together.</p>
     </div>
@@ -114,13 +118,13 @@
           <h2>Connect With Us</h2>
 
           <div class="soc-med-icons">
-            <a href="https://www.meetup.com/codeseoul/">
+            <a data-aos="fade-right" href="https://www.meetup.com/codeseoul/">
               <i class="fab fa-meetup"></i>
             </a>
-            <a href="https://www.facebook.com/codeseoul/">
+            <a data-aos-delay="200" data-aos="fade-right" href="https://www.facebook.com/codeseoul/">
               <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://discord.gg/KQ3FYFv">
+            <a data-aos-delay="400" data-aos="fade-right" href="https://discord.gg/KQ3FYFv">
               <i class="fab fa-discord"></i>
             </a>
           </div>
@@ -214,7 +218,11 @@
 
   <!-- Custom JS -->
   <script src="js/scripts.js"></script>
-
+  <!-- AOS JS / Init-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
