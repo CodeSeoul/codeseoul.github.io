@@ -1,7 +1,7 @@
 # CODESEOUL
-This project will be used as the basis for the CodeSeoul website. 
+This is an Open Source project that provides the basis for the CodeSeoul website.
 
-https://codeseoul.github.io/
+https://codeseoul.org
 
 ## Dependencies 
 - Bootstrap 
