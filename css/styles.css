@@ -102,20 +102,39 @@ section .soc-med-icons i:hover {
   list-style-type: none;
 }
 
-/**SERIES CARDS**/
-.series-container {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid red;
+/**EVENTS CARDS**/
+
+#events .card {
+  width: 15rem;
 }
 
-.series-container .card {
-  width: 15rem;
+#events-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.card-deck .card {
+  flex: unset !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .card-title {
   font-weight: 700;
   color: #ED1B24;
+}
+
+/**RESOURCES**/
+.resources .card-deck {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.resources .card {
+  width: 20rem;
 }
 
 /**SPONSORS **/

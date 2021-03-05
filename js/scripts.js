@@ -81,6 +81,8 @@ function createMeetupEvents(data) {
       //Create location text
       let cardTextLocation = document.createElement("p");
       cardTextLocation.setAttribute("class", "card-text");
+      eventItem["venue"]["address_1"] = eventItem["venue"]["address_1"] !== undefined ? eventItem["venue"]["address_1"] : "";
+
       cardTextLocation.innerHTML =
         "Location: " +
         eventItem["venue"]["name"] +
