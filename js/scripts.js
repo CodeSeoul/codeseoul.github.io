@@ -1,10 +1,12 @@
+const countMeetupEventResults = 4;
+
 /**
  * Meetup API
  * Returns an array from the API
  */
 function getMeetupEvents() {
   $.ajax({
-    url: "https://api.meetup.com/CodeSeoul/events",
+    url: `https://api.meetup.com/CodeSeoul/events?page=${countMeetupEventResults}`,
     jsonp: "callback",
     dataType: "jsonp",
     data: {
