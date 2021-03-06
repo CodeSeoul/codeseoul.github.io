@@ -24,8 +24,8 @@ getMeetupEvents();
  */
 function createMeetupEvents(data) {
   let eventsDiv = document.querySelector(`#events-container`);
-  if (data.length < 1) {
-    //Create card
+
+  function createBaseEventCard() {
     let eventCard = document.createElement("div");
     eventCard.setAttribute("class", "card");
 
@@ -39,6 +39,12 @@ function createMeetupEvents(data) {
     cardTitle.setAttribute("class", "card-title");
     cardTitle.innerHTML = "No Events Scheduled";
     cardBody.appendChild(cardTitle);
+    return {eventCard, cardBody};
+  }
+
+  if (data.length < 1) {
+    //Create card
+    let {eventCard, cardBody} = createBaseEventCard();
 
     //Create card text
     let cardText = document.createElement("p");
@@ -53,19 +59,7 @@ function createMeetupEvents(data) {
       let eventItem = data[i];
 
       //Create card
-      let eventCard = document.createElement("div");
-      eventCard.setAttribute("class", "card");
-
-      //Create card body
-      let cardBody = document.createElement("div");
-      cardBody.setAttribute("class", "card-body");
-      eventCard.appendChild(cardBody);
-
-      //Create card title
-      let cardTitle = document.createElement("h4");
-      cardTitle.setAttribute("class", "card-title");
-      cardTitle.innerHTML = eventItem["name"];
-      cardBody.appendChild(cardTitle);
+      let {eventCard, cardBody} = createBaseEventCard();
 
       //Create card text
       let cardText = document.createElement("p");
@@ -111,11 +105,11 @@ function createMeetupEvents(data) {
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (
-      location.pathname.replace(/^\//, "") ==
+      location.pathname.replace(/^\//, "") ===
         this.pathname.replace(/^\//, "") &&
-      location.hostname == this.hostname
+      location.hostname === this.hostname
     ) {
-      var target = $(this.hash);
+      let target = $(this.hash);
       target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
       if (target.length) {
         $("html, body").animate(
