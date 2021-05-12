@@ -137,6 +137,18 @@ section .soc-med-icons i:hover {
   width: 20rem;
 }
 
+.cs-resources {
+  margin-top: 2em;
+}
+
+.cs-resource-list {
+  text-align: left;
+
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
 /**SPONSORS **/
 .sponsors-list {
   display: flex;
@@ -180,4 +192,9 @@ section .soc-med-icons i:hover {
     padding-top: 100px;
   }
 
+  .cs-resource-list {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
 }
