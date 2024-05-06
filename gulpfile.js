@@ -1,10 +1,18 @@
 "use strict";
 
+// imports
+const fs = require("fs");
+
 // Load plugins
 const browsersync = require("browser-sync").create();
-const del = require("del");
 const gulp = require("gulp");
 const merge = require("merge-stream");
+
+// BrowserSync reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
 
 // BrowserSync
 function browserSync(done) {
@@ -14,47 +22,45 @@ function browserSync(done) {
     },
     port: 3000
   });
-  done();
-}
 
-// BrowserSync reload
-function browserSyncReload(done) {
-  browsersync.reload();
+  gulp.watch(["./**/*.css", "./**/*.html", "./**/*.js"], browserSyncReload)
   done();
 }
 
 // Clean vendor
-function clean() {
-  return del(["./vendor/"]);
+function clean(done) {
+  fs.rmSync("vendor", {recursive: true, force: true}, (error) => {
+    console.error(error);
+  });
+  done();
 }
 
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap'));
+  const bootstrapjs = gulp.src([
+    './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+  ], {debug: true})
+    .pipe(gulp.dest('./vendor/bootstrap/js'));
+  const bootstrapcss = gulp.src([
+    './node_modules/bootstrap/dist/css/bootstrap.min.css',
+  ], {debug: true})
+    .pipe(gulp.dest('./vendor/bootstrap/css'));
   // jQuery
-  var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
+  const jquery = gulp.src([
+      './node_modules/jquery/dist/jquery.min.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'));
-  // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./vendor/jquery-easing'));
-  return merge(bootstrap, jquery, jqueryEasing);
-}
-
-// Watch files
-function watchFiles() {
-  gulp.watch("./**/*.css", browserSyncReload);
-  gulp.watch("./**/*.html", browserSyncReload);
+  // jQuery UI
+  const jqueryUI = gulp.src('./node_modules/jquery-ui/dist/jquery-ui.min.js')
+    .pipe(gulp.dest('./vendor/jquery-ui'));
+  return merge(bootstrapjs, bootstrapcss, jquery, jqueryUI);
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
 const build = gulp.series(vendor);
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+const watch = gulp.series(build, browserSync);
 
 // Export tasks
 exports.clean = clean;

@@ -4,10 +4,6 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-a {
-  transition: all 0.5s ease;
-}
-
 a:hover {
   text-decoration: none;
 }
@@ -19,8 +15,12 @@ nav {
   height: 5rem;
 }
 
-nav .container img {
-  width: 14rem;
+nav .logo {
+  height: inherit;
+}
+
+nav .logo img {
+  max-height: 100%;
 }
 
 nav .nav-link {
@@ -31,7 +31,10 @@ nav .nav-link {
 
 nav .nav-item {
   margin: 0.5rem;
-  transition: all 0.2s ease;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  border-bottom: 0.2rem solid transparent;
 }
 
 nav .nav-item:hover {
@@ -45,12 +48,12 @@ nav .nav-item:hover {
 
 /**CUSTOM BUTTONS **/
 .btn {
-  opacity: 0.8;
-  transition: all 0.5s ease;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 
 .btn:hover {
-  opacity: 1;
   font-size: larger;
 }
 
@@ -60,6 +63,7 @@ nav .nav-item:hover {
 }
 
 .btn-blue:hover {
+  background-color: #2D3192;
   color: #ffffff;
 }
 
@@ -88,7 +92,9 @@ section a {
 
 section .soc-med-icons i{
   font-size: 4rem;
-  transition: all 0.3s ease;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
   padding: 0.3rem;
   color: #000000;
   text-decoration: none;
@@ -106,6 +112,7 @@ section .soc-med-icons i:hover {
 
 #events .card {
   width: 15rem;
+  margin: 0.25rem;
 }
 
 #events-container {
@@ -118,7 +125,7 @@ section .soc-med-icons i:hover {
 
 
 .card-deck .card {
-  flex: unset !important;
+  flex: unset;
   margin-bottom: 0.5rem !important;
 }
 
@@ -129,11 +136,14 @@ section .soc-med-icons i:hover {
 
 /**RESOURCES**/
 .resources .card-deck {
-  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
 }
 
 .resources .card {
+  margin-right: 0.5rem;
   width: 20rem;
 }
 
@@ -175,15 +185,7 @@ section .soc-med-icons i:hover {
     text-align: center;
   }
 
-  nav .logo {
-    display: inline-block;
-    width: 80%;
-  }
-  nav .container img {
-    width: 75%;
-  }
-
-  #navbarResponsive {
+  #navbarSupportedContent {
     background-color: #ffffff;
     text-align: center;
   }

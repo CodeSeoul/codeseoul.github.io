@@ -40,39 +40,32 @@
 
 </head>
 <body>
-    <!-- Navigation -->
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
+    <a class="logo navbar-brand" href="index.html">
+      <img src="images/sidesslash.jpg" alt="CodeSeoul" />
+    </a>
 
-      <a class="logo" href="index.html">
-        <img src="images/sidesslash.jpg" alt="CodeSeoul logo" />
-      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" data-aos="fade-right">
-            <a class="nav-link js-scroll-trigger" href="index.html#events">Events</a>
-          </li>
+        <li class="nav-item" data-aos="fade-right">
+          <a class="nav-link js-scroll-trigger" href="./index.html#events">Events</a>
+        </li>
+        <li class="nav-item" data-aos-delay="200" data-aos="fade-right">
+          <a class="nav-link js-scroll-trigger" href="./index.html#sponsors">Sponsors</a>
+        </li>
+        <li class="nav-item"data-aos-delay="400" data-aos="fade-right">
+          <a href="./resources.html" class="nav-link" data-aos-delay="400" data-aos="fade-right">Resources</a>
+        </li>
 
-          <li class="nav-item" data-aos-delay="300" data-aos="fade-right"
-          >
-            <a class="nav-link js-scroll-trigger" href="index.html#series">Series</a>
-          </li>
-
-          <li class="nav-item" data-aos-delay="600" data-aos="fade-right">
-            <a class="nav-link js-scroll-trigger" href="index.html#sponsors">Sponsors</a>
-          </li>
-
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li> -->
-        </ul>
-      </div>
+      </ul>
     </div>
   </nav>
+    
     <!-- Header -->
     <header>
         <h1 class="mt-4 mx-auto text-center">Community Resources</h1>
@@ -173,6 +166,30 @@
           </ol>
         </div>
       </div>
+
+  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; CodeSeoul 2016-2021</p>
+      <p class="m-0 text-center text-white"><a href='https://www.termsandconditionsgenerator.com/live.php?token=XG2S5ycqAOmfqckMm1YmDmqLaJdi2E9W' target="_blank">Terms of Service</a></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+  <!-- AOS JS / Init-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>

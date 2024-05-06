@@ -3,9 +3,12 @@ This is an Open Source project that provides the basis for the CodeSeoul website
 
 https://codeseoul.org
 
-## Dependencies 
-- Bootstrap 
+## Setup
+```shell
+npm install
+```
 
-## Usage
-- npm install
-- npm start
+## Run
+```shell
+npm start
+```
