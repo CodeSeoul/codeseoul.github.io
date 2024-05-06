@@ -58,6 +58,7 @@ function createMeetupEvents(data) {
     eventsDiv.appendChild(eventCard);
   } else {
     for (let i = 0; i < data.length; i++) {
+      // TODO: Make parsing more robust
       let eventItem = data[i];
 
       //Create card
@@ -77,13 +78,14 @@ function createMeetupEvents(data) {
       //Create location text
       let cardTextLocation = document.createElement("p");
       cardTextLocation.setAttribute("class", "card-text");
-      eventItem["venue"]["address_1"] = eventItem["venue"]["address_1"] !== undefined ? eventItem["venue"]["address_1"] : "";
-
-      cardTextLocation.innerHTML =
-        "Location: " +
-        eventItem["venue"]["name"] +
-        "<br/>" +
-        eventItem["venue"]["address_1"];
+      if (!eventItem["is_online_event"]) {
+        eventItem["venue"]["address_1"] = eventItem["venue"]["address_1"] !== undefined ? eventItem["venue"]["address_1"] : "";
+        cardTextLocation.innerHTML =
+          `Location: ${eventItem["venue"]["name"]}<br/>
+            ${eventItem["venue"]["address_1"]}`;
+      } else {
+        cardTextLocation.innerHTML = "Location: Online! See event for details";
+      }
       cardBody.appendChild(cardTextLocation);
 
       //Create Link Button
@@ -105,7 +107,7 @@ function createMeetupEvents(data) {
   "use strict"; // Start of use strict
 
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').on("click", function() {
     if (
       location.pathname.replace(/^\//, "") ===
         this.pathname.replace(/^\//, "") &&
@@ -127,13 +129,7 @@ function createMeetupEvents(data) {
   });
 
   // Closes responsive menu when a scroll trigger link is clicked
-  $(".js-scroll-trigger").click(function () {
+  $(".js-scroll-trigger").on("click", function() {
     $(".navbar-collapse").collapse("hide");
-  });
-
-  // Activate scrollspy to add active class to navbar items on scroll
-  $("body").scrollspy({
-    target: "#mainNav",
-    offset: 56,
   });
 })(jQuery); // End of use strict

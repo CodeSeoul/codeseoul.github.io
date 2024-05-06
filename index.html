@@ -47,41 +47,29 @@
 </head>
 
 <body id="page-top">
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
+    <a class="logo navbar-brand" href="index.html">
+      <img src="images/sidesslash.jpg" alt="CodeSeoul" />
+    </a>
 
-      <a class="logo" href="index.html">
-        <img src="images/sidesslash.jpg" alt="CodeSeoul logo" />
-      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <li class="nav-item" data-aos="fade-right">
+          <a class="nav-link js-scroll-trigger" href="#events">Events</a>
+        </li>
+        <li class="nav-item" data-aos-delay="200" data-aos="fade-right">
+          <a class="nav-link js-scroll-trigger" href="#sponsors">Sponsors</a>
+        </li>
+        <li class="nav-item"data-aos-delay="400" data-aos="fade-right">
+          <a href="./resources.html" class="nav-link" data-aos-delay="400" data-aos="fade-right">Resources</a>
+        </li>
 
-          <li class="nav-item" data-aos="fade-right">
-            <a class="nav-link js-scroll-trigger" href="#events">Events</a>
-          </li>
-
-          <li class="nav-item" data-aos-delay="200" data-aos="fade-right">
-            <a class="nav-link js-scroll-trigger" href="#series">Series</a>
-          </li>
-          <li class="nav-item">
-            <a href="./resources.html" class="nav-link" data-aos-delay="400" data-aos="fade-right">Resources</a>
-          </li>
-          <li class="nav-item" data-aos-delay="600" data-aos="fade-right">
-            <a class="nav-link js-scroll-trigger" href="#sponsors">Sponsors</a>
-          </li>
-
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li> -->
-
-        </ul>
-      </div>
+      </ul>
     </div>
   </nav>
 
@@ -122,11 +110,14 @@
             <a data-aos="fade-right" href="https://www.meetup.com/codeseoul/">
               <i class="fab fa-meetup"></i>
             </a>
-            <a data-aos-delay="200" data-aos="fade-right" href="https://www.facebook.com/codeseoul/">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a data-aos-delay="400" data-aos="fade-right" href="https://discord.gg/KQ3FYFv">
+            <a data-aos-delay="200" data-aos="fade-right" href="https://discord.gg/KQ3FYFv">
               <i class="fab fa-discord"></i>
+            </a>
+            <a data-aos-delay="400" data-aos="fade-right" href="https://www.youtube.com/@codeseoul">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a data-aos-delay="600" data-aos="fade-right" href="https://www.facebook.com/codeseoul/">
+              <i class="fab fa-facebook"></i>
             </a>
           </div>
 
@@ -139,41 +130,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Series -->
-  <section id="series">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-lg-12 mx-auto">
-          <h2>Series</h2>
-
-          <p class="lead">
-            CodeSeoul runs one-off and series events. Here are some of the recent series we have hosted.
-          </p>
-
-          <div class="card-deck">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Job Hunt Korea</h4>
-                <p class="card-text">Get tips about job searching in Korea</p>
-                <a href="https://www.meetup.com/codeseoul/" class="btn btn-blue stretched-link">See Latest Event</a>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">NodeJS</h4>
-                <p class="card-text">Learn all about NodeJS</p>
-                <a href="https://www.meetup.com/codeseoul/" class="btn btn-blue stretched-link">See Latest Event</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <!-- Sponsors -->
   <section id="sponsors">
@@ -190,6 +146,9 @@
           <div class="sponsors-list">
             <a class="sponsor-ind" href="https://www.wcoding.com">
               <img src="images/wcoding-logo.png"  alt="WCoding logo"/>
+            </a>
+            <a class="sponsor-ind" href="https://www.lunit.io">
+              <img src="images/lunit-logo-transparent.svg"  alt="Lunit logo"/>
             </a>
           </div>
 
@@ -216,7 +175,7 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
 
   <!-- Custom JS -->
   <script src="js/scripts.js"></script>
